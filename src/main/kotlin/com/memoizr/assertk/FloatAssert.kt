@@ -42,7 +42,7 @@ class FloatAssert internal constructor(
         return Close(expected, assertion, this)
     }
 
-    infix fun actuallyIs(expected: NumberSelector): FloatAssert {
+    infix fun toBe(expected: NumberSelector): FloatAssert {
         when (expected) {
             zero -> assertion.isZero()
             notZero -> assertion.isNotZero()

@@ -126,21 +126,21 @@ class `Double assert test` {
 
     @Test
     fun isZero() {
-        _expect that 0.0 shouldBe zero andCanBe chained
+        _expect that 0.0 toBe zero andCanBe chained
         0.0 shouldBe zero andCanBe chained
         verify.isZero()
     }
 
     @Test
     fun isNotZero() {
-        _expect that one shouldBe notZero andCanBe chained
+        _expect that one toBe notZero andCanBe chained
         one shouldBe notZero andCanBe chained
         verify.isNotZero()
     }
 
     @Test
     fun isPositive() {
-        _expect that one shouldBe positive andCanBe chained
+        _expect that one toBe positive andCanBe chained
         one shouldBe positive andCanBe chained
         verify.isPositive()
     }
@@ -148,21 +148,21 @@ class `Double assert test` {
 
     @Test
     fun isNotPositive() {
-        _expect that negativeOne shouldBe notPositive andCanBe chained
+        _expect that negativeOne toBe notPositive andCanBe chained
         negativeOne shouldBe notPositive andCanBe chained
         verify.isNotPositive()
     }
 
     @Test
     fun isNegative() {
-        _expect that negativeOne shouldBe negative andCanBe chained
+        _expect that negativeOne toBe negative andCanBe chained
         negativeOne shouldBe negative andCanBe chained
         verify.isNegative()
     }
 
     @Test
     fun isNotNegative() {
-        _expect that one shouldBe notNegative andCanBe chained
+        _expect that one toBe notNegative andCanBe chained
         one shouldBe notNegative andCanBe chained
         verify.isNotNegative()
     }
@@ -170,13 +170,13 @@ class `Double assert test` {
     @Test
     fun `supports block syntax`() {
         _expect that one isSuchThat {
-            it shouldBe positive
-            it shouldBe notNegative
+            it toBe positive
+            it toBe notNegative
             it isBetween (negativeOne..three)
         }
         assert that one isSuchThat {
-            it shouldBe positive
-            it shouldBe notNegative
+            it toBe positive
+            it toBe notNegative
             it isBetween (negativeOne..three)
         }
     }

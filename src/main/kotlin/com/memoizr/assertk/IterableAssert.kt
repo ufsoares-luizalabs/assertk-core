@@ -9,7 +9,7 @@ class IterableAssert<ELEMENT : Any?, ACTUAL : Iterable<ELEMENT>> internal constr
         override val assertion: AbstractIterableAssert<*, Iterable<ELEMENT>, ELEMENT, *> = assertThat(subjectUnderTest))// {
 : AbstractAssertBuilder<IterableAssert<ELEMENT, ACTUAL>, Iterable<ELEMENT>>(subjectUnderTest, IterableAssert::class.java) {
 
-    infix fun actuallyIs(selector: SequenceSelector): IterableAssert<ELEMENT, ACTUAL> {
+    infix fun toBe(selector: SequenceSelector): IterableAssert<ELEMENT, ACTUAL> {
         when (selector) {
             empty -> assertion.isEmpty()
             nullOrEmpty -> assertion.isNullOrEmpty()

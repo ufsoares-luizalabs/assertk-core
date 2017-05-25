@@ -90,52 +90,52 @@ class `Long assert test` {
 
     @Test
     fun isZero() {
-        _expect that 0L actuallyIs zero andCanBe chained
+        _expect that 0L toBe zero andCanBe chained
         verify.isZero()
     }
 
     @Test
     fun isNotZero() {
-        _expect that one actuallyIs notZero andCanBe chained
+        _expect that one toBe notZero andCanBe chained
         verify.isNotZero()
     }
 
     @Test
     fun isPositive() {
-        _expect that one actuallyIs positive andCanBe chained
+        _expect that one toBe positive andCanBe chained
         verify.isPositive()
     }
 
 
     @Test
     fun isNotPositive() {
-        _expect that negativeOne actuallyIs notPositive andCanBe chained
+        _expect that negativeOne toBe notPositive andCanBe chained
         verify.isNotPositive()
     }
 
     @Test
     fun isNegative() {
-        _expect that negativeOne actuallyIs negative andCanBe chained
+        _expect that negativeOne toBe negative andCanBe chained
         verify.isNegative()
     }
 
     @Test
     fun isNotNegative() {
-        _expect that one actuallyIs notNegative andCanBe chained
+        _expect that one toBe notNegative andCanBe chained
         verify.isNotNegative()
     }
 
     @Test
     fun `supports block syntax`() {
         _expect that one isSuchThat {
-            it actuallyIs positive
-            it actuallyIs notNegative
+            it toBe positive
+            it toBe notNegative
             it isBetween (negativeOne..three)
         }
 
         assert that one isSuchThat {
-            it actuallyIs positive
-            it actuallyIs notNegative
+            it toBe positive
+            it toBe notNegative
             it isBetween (negativeOne..three)
             it isInstance of<Long>()
         }

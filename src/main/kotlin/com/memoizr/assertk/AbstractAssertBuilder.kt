@@ -27,7 +27,7 @@ abstract class AbstractAssertBuilder<S : AbstractAssertBuilder<S, A>, A : Any>(a
         return myself
     }
 
-    infix fun actuallyIs(objectSelector: ObjectSelector?): S {
+    infix fun toBe(objectSelector: ObjectSelector?): S {
         return _is(objectSelector)
     }
 
