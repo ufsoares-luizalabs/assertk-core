@@ -92,52 +92,52 @@ class `Integer assert test` {
     @Test
     fun isZero() {
         val tzero = 0
-        _expect that tzero _is zero andCanBe chained
+        _expect that tzero actuallyIs zero andCanBe chained
         verify.isZero()
     }
 
     @Test
     fun isNotZero() {
-        _expect that one _is notZero andCanBe chained
+        _expect that one actuallyIs notZero andCanBe chained
         verify.isNotZero()
     }
 
     @Test
     fun isPositive() {
-        _expect that one _is positive andCanBe chained
+        _expect that one actuallyIs positive andCanBe chained
         verify.isPositive()
     }
 
 
     @Test
     fun isNotPositive() {
-        _expect that negativeOne _is notPositive andCanBe chained
+        _expect that negativeOne actuallyIs notPositive andCanBe chained
         verify.isNotPositive()
     }
 
     @Test
     fun isNegative() {
-        _expect that negativeOne _is negative andCanBe chained
+        _expect that negativeOne actuallyIs negative andCanBe chained
         verify.isNegative()
     }
 
     @Test
     fun isNotNegative() {
-        _expect that one _is notNegative andCanBe chained
+        _expect that one actuallyIs notNegative andCanBe chained
         verify.isNotNegative()
     }
 
     @Test
     fun `supports block syntax`() {
         _expect that one isSuchThat {
-            it _is positive
-            it _is notNegative
+            it actuallyIs positive
+            it actuallyIs notNegative
             it isBetween (negativeOne..three)
         }
 
         assert that one isSuchThat {
-            it _is positive
-            it _is notNegative
+            it actuallyIs positive
+            it actuallyIs notNegative
             it isBetween (negativeOne..three)
         }
     }

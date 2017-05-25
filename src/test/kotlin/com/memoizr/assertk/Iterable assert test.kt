@@ -25,19 +25,19 @@ class `Iterable assert test` {
 
     @Test
     fun isEmpty() {
-        _expect that emptyList _is empty canBe chained
+        _expect that emptyList actuallyIs empty canBe chained
         verify(mockAssertion).isEmpty()
     }
 
     @Test
     fun isNullOrEmpty() {
-        _expect that emptyList _is nullOrEmpty canBe chained
+        _expect that emptyList actuallyIs nullOrEmpty canBe chained
         verify(mockAssertion).isNullOrEmpty()
     }
 
     @Test
     fun isNotEmpty() {
-        _expect that listOf(Unit) _is notEmpty canBe chained
+        _expect that listOf(Unit) actuallyIs notEmpty canBe chained
         verify(mockAssertion).isNotEmpty()
     }
 

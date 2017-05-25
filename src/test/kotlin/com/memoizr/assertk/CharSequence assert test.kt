@@ -22,23 +22,23 @@ class `CharSequence assert test` {
     @Test
     fun `isNullOrEmpty checks for nullity or emptiness`() {
         val nullString: String? = null
-        _expect that "" _is nullOrEmpty canBe chained
-        _expect that nullString _is nullOrEmpty
+        _expect that "" actuallyIs nullOrEmpty canBe chained
+        _expect that nullString actuallyIs nullOrEmpty
         _expect thatThrownBy {
-            _expect that "not null or empty" _is nullOrEmpty
+            _expect that "not null or empty" actuallyIs nullOrEmpty
         }
         verify(mockAssertion).isNullOrEmpty()
     }
 
     @Test
     fun `isEmpty checks only for emptiness`() {
-        _expect that "" _is empty canBe chained
+        _expect that "" actuallyIs empty canBe chained
         verify(mockAssertion).isEmpty()
     }
 
     @Test
     fun `isNotEmpty checks for non emptiness`() {
-        _expect that "not empty" _is notEmpty canBe chained
+        _expect that "not empty" actuallyIs notEmpty canBe chained
         verify(mockAssertion).isNotEmpty()
     }
 

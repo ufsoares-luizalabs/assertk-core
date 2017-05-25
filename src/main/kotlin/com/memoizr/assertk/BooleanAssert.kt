@@ -8,7 +8,7 @@ class BooleanAssert internal constructor(
         override val assertion: AbstractBooleanAssert<*> = Assertions.assertThat(subjectUnderTest)) :
         AbstractAssertBuilder<BooleanAssert, Boolean>(subjectUnderTest, BooleanAssert::class.java) {
 
-    infix fun _is(other: Boolean): BooleanAssert {
+    infix fun actuallyIs(other: Boolean): BooleanAssert {
         if (other) assertion.isTrue() else assertion.isFalse()
         return this
     }

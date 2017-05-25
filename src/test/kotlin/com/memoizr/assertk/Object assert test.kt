@@ -74,20 +74,20 @@ class `Object assert test` {
 
     @Test
     fun `_is notNull checks whether object is null`() {
-        _expect that Any() actualyIs notNull
+        _expect that Any() actuallyIs notNull
 
         _expect thatThrownBy {
-            _expect that nullObject actualyIs notNull
+            _expect that nullObject actuallyIs notNull
         }
         verify(mockAssertion).isNotNull()
     }
 
     @Test
     fun `_is null checks whether object is not null`() {
-        _expect that nullObject actualyIs null
+        _expect that nullObject actuallyIs null
 
         _expect thatThrownBy {
-            _expect that Any() actualyIs null
+            _expect that Any() actuallyIs null
         }
         verify(mockAssertion).isNull()
     }
@@ -132,7 +132,7 @@ class `Object assert test` {
 
         _expect thatThrownBy {
             _expect that Any() isSuchThat {
-                it actualyIs null
+                it actuallyIs null
                 it isInstance of<Unit>()
             }
         }

@@ -14,9 +14,9 @@ infix fun Double.isEqualTo(expected: Double): DoubleAssert = expect that this is
 infix fun Double.isNotEqualTo(expected: Double): DoubleAssert = expect that this isNotEqualTo expected
 infix fun Double.isInstance(expected: AbstractAssertBuilder.InstanceMatcher<Double>): DoubleAssert = expect that this isInstance expected
 infix fun Double.toBe(expected: NumberSelector): DoubleAssert = expect that this shouldBe expected
-infix fun Double.toBe(expected: ObjectSelector): DoubleAssert = expect that this actualyIs expected
+infix fun Double.toBe(expected: ObjectSelector): DoubleAssert = expect that this actuallyIs expected
 infix fun Double.shouldBe(expected: NumberSelector): DoubleAssert = expect that this shouldBe expected
-infix fun Double.shouldBe(expected: ObjectSelector): DoubleAssert = expect that this actualyIs expected
+infix fun Double.shouldBe(expected: ObjectSelector): DoubleAssert = expect that this actuallyIs expected
 infix fun Double.describedAs(description: String): DoubleAssert = expect that this describedAs description
 
 class DoubleAssert internal constructor(
