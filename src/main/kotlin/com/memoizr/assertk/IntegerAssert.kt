@@ -42,7 +42,7 @@ class IntegerAssert internal constructor(
         return Close(expected, assertion, this)
     }
 
-    infix fun toBe(expected: NumberSelector): IntegerAssert {
+    infix fun shouldBe(expected: NumberSelector): IntegerAssert {
         when (expected) {
             zero -> assertion.isZero()
             notZero -> assertion.isNotZero()

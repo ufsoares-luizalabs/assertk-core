@@ -23,14 +23,14 @@ class `BooleanAssert test` {
 
     @Test
     fun isTrue() {
-        _expect that true toBe true andCanBe chained
+        _expect that true shouldBe true andCanBe chained
         verify(mockAssertion).isTrue()
         verify(mockAssertion, never()).isFalse()
     }
 
     @Test
     fun isFalse() {
-        _expect that false toBe false andCanBe chained
+        _expect that false shouldBe false andCanBe chained
         verify(mockAssertion).isFalse()
         verify(mockAssertion, never()).isTrue()
     }

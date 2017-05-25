@@ -45,8 +45,8 @@ class `Double assert test` {
 
     @Test
     fun is_() {
-        three toBe notNull andCanBe chained
-        three toBe notNegative andCanBe chained
+        three actuallyIs notNull andCanBe chained
+        three actuallyIs notNegative andCanBe chained
     }
 
     @Test
@@ -126,21 +126,21 @@ class `Double assert test` {
 
     @Test
     fun isZero() {
-        _expect that 0.0 toBe zero andCanBe chained
+        _expect that 0.0 shouldBe zero andCanBe chained
         0.0 shouldBe zero andCanBe chained
         verify.isZero()
     }
 
     @Test
     fun isNotZero() {
-        _expect that one toBe notZero andCanBe chained
+        _expect that one shouldBe notZero andCanBe chained
         one shouldBe notZero andCanBe chained
         verify.isNotZero()
     }
 
     @Test
     fun isPositive() {
-        _expect that one toBe positive andCanBe chained
+        _expect that one shouldBe positive andCanBe chained
         one shouldBe positive andCanBe chained
         verify.isPositive()
     }
@@ -148,21 +148,21 @@ class `Double assert test` {
 
     @Test
     fun isNotPositive() {
-        _expect that negativeOne toBe notPositive andCanBe chained
+        _expect that negativeOne shouldBe notPositive andCanBe chained
         negativeOne shouldBe notPositive andCanBe chained
         verify.isNotPositive()
     }
 
     @Test
     fun isNegative() {
-        _expect that negativeOne toBe negative andCanBe chained
+        _expect that negativeOne shouldBe negative andCanBe chained
         negativeOne shouldBe negative andCanBe chained
         verify.isNegative()
     }
 
     @Test
     fun isNotNegative() {
-        _expect that one toBe notNegative andCanBe chained
+        _expect that one shouldBe notNegative andCanBe chained
         one shouldBe notNegative andCanBe chained
         verify.isNotNegative()
     }
@@ -170,13 +170,13 @@ class `Double assert test` {
     @Test
     fun `supports block syntax`() {
         _expect that one isSuchThat {
-            it toBe positive
-            it toBe notNegative
+            it shouldBe positive
+            it shouldBe notNegative
             it isBetween (negativeOne..three)
         }
         assert that one isSuchThat {
-            it toBe positive
-            it toBe notNegative
+            it shouldBe positive
+            it shouldBe notNegative
             it isBetween (negativeOne..three)
         }
     }

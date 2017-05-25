@@ -11,21 +11,21 @@ assert that Unit isEqualTo Unit
 you can use `assert that` or `expect that` interchangeably as `assert` tends to be a bit noisy when trying to autocomplete the statement.
 ```kotlin
 expect that Any() isNotEqualTo Any()
-expect that Any() toBe notNull
-expect that nullObject toBe null
+expect that Any() shouldBe notNull
+expect that nullObject shouldBe null
 expect that anObject isInstance of<Any>()
 expect that Any() describedAs "A labeled object" isInstance of<Unit>()
 ```
 
 ###Chained syntax
 ```kotlin
-expect that Unit isNotEqualTo Any() isEqualTo Unit toBe notNull isInstance of<Any>()
+expect that Unit isNotEqualTo Any() isEqualTo Unit shouldBe notNull isInstance of<Any>()
 ```
 
 ###Block syntax
 ```kotlin
 expect that Any() isSuchThat {
-    it toBe notNull
+    it shouldBe notNull
     it isInstance of<Any>()
     it isNotEqualTo Unit
     it isNotEqualTo Any()
@@ -59,12 +59,12 @@ expect that myListOfInts hasSize 10 contains 3 startsWith 1
 ```
 ##Boolean Assert
 ```kotlin
-expect that myBoolean toBe false
+expect that myBoolean shouldBe false
 ```
 ##Float, Double, Int, Long Assert
 ```kotlin
 expect that myFloat isGreaterThan otherFloat
-expect that myInt toBe notPositive isLessThan expectedResult
+expect that myInt shouldBe notPositive isLessThan expectedResult
 ```
 ##Get it
 ```groovy

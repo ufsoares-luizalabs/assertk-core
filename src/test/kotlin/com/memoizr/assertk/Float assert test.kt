@@ -77,52 +77,52 @@ class `Float assert test` {
 
     @Test
     fun isZero() {
-        _expect that 0f toBe zero andCanBe chained
+        _expect that 0f shouldBe zero andCanBe chained
         verify.isZero()
     }
 
     @Test
     fun isNotZero() {
-        _expect that one toBe notZero andCanBe chained
+        _expect that one shouldBe notZero andCanBe chained
         verify.isNotZero()
     }
 
     @Test
     fun isPositive() {
-        _expect that one toBe positive andCanBe chained
+        _expect that one shouldBe positive andCanBe chained
         verify.isPositive()
     }
 
 
     @Test
     fun isNotPositive() {
-        _expect that negativeOne toBe notPositive andCanBe chained
+        _expect that negativeOne shouldBe notPositive andCanBe chained
         verify.isNotPositive()
     }
 
     @Test
     fun isNegative() {
-        _expect that negativeOne toBe negative andCanBe chained
+        _expect that negativeOne shouldBe negative andCanBe chained
         verify.isNegative()
     }
 
     @Test
     fun isNotNegative() {
-        _expect that one toBe notNegative andCanBe chained
+        _expect that one shouldBe notNegative andCanBe chained
         verify.isNotNegative()
     }
 
     @Test
     fun `supports block syntax`() {
         _expect that one isSuchThat {
-            it toBe positive
-            it toBe notNegative
+            it shouldBe positive
+            it shouldBe notNegative
             it isBetween (negativeOne..three)
         }
 
         assert that one isSuchThat {
-            it toBe positive
-            it toBe notNegative
+            it shouldBe positive
+            it shouldBe notNegative
             it isBetween (negativeOne..three)
         }
     }

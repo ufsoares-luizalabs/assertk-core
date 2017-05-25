@@ -27,11 +27,7 @@ abstract class AbstractAssertBuilder<S : AbstractAssertBuilder<S, A>, A : Any>(a
         return myself
     }
 
-    infix fun toBe(objectSelector: ObjectSelector?): S {
-        return _is(objectSelector)
-    }
-
-    private fun _is(objectSelector: ObjectSelector?): S {
+    infix fun shouldBe(objectSelector: ObjectSelector?): S {
         return when (objectSelector) {
             notNull -> {
                 assertion.isNotNull()

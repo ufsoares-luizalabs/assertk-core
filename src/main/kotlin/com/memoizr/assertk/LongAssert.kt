@@ -42,7 +42,7 @@ class LongAssert internal constructor(
         return Close(expected, assertion, this)
     }
 
-    infix fun toBe(expected: NumberSelector): LongAssert {
+    infix fun shouldBe(expected: NumberSelector): LongAssert {
         when (expected) {
             zero -> assertion.isZero()
             notZero -> assertion.isNotZero()
