@@ -16,7 +16,7 @@ class `Object assert test` {
     lateinit var mockAssertion: AbstractObjectAssert<*, Any>
     @Suppress("UNCHECKED_CAST")
     val _expect = object : AssertionHook {
-        override fun <A: Any> that(subjectUnderTest: A?): ObjectAssert<A> {
+        override fun <A : Any> that(subjectUnderTest: A?): ObjectAssert<A> {
             val spy: AbstractObjectAssert<*, A?>? = spy(Assertions.assertThat(subjectUnderTest))
             mockAssertion = spy as AbstractObjectAssert<*, Any>
             return ObjectAssert(subjectUnderTest, mockAssertion) as ObjectAssert<A>
@@ -41,7 +41,7 @@ class `Object assert test` {
 
     @Test
     fun is_() {
-        A is_ notNull
+        A toBe notNull
     }
 
     @Test
@@ -74,20 +74,20 @@ class `Object assert test` {
 
     @Test
     fun `_is notNull checks whether object is null`() {
-        _expect that Any() _is notNull
+        _expect that Any() actualyIs notNull
 
         _expect thatThrownBy {
-            _expect that nullObject _is notNull
+            _expect that nullObject actualyIs notNull
         }
         verify(mockAssertion).isNotNull()
     }
 
     @Test
     fun `_is null checks whether object is not null`() {
-        _expect that nullObject _is null
+        _expect that nullObject actualyIs null
 
         _expect thatThrownBy {
-            _expect that Any() _is null
+            _expect that Any() actualyIs null
         }
         verify(mockAssertion).isNull()
     }
@@ -117,14 +117,14 @@ class `Object assert test` {
     @Test
     fun `block _expections are supported`() {
         _expect that Any() isSuchThat {
-            it _is notNull
+            it toBe notNull
             it isInstance of<Any>()
             it isNotEqualTo Unit
             it isNotEqualTo Any()
         }
 
         assert that Any() isSuchThat {
-            it _is notNull
+            it toBe notNull
             it isInstance of<Any>()
             it isNotEqualTo Unit
             it isNotEqualTo Any()
@@ -132,7 +132,7 @@ class `Object assert test` {
 
         _expect thatThrownBy {
             _expect that Any() isSuchThat {
-                it _is null
+                it actualyIs null
                 it isInstance of<Unit>()
             }
         }
